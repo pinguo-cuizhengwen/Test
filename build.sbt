@@ -20,6 +20,8 @@ enablePlugins(JavaAppPackaging)
 
 organization := "us.pinguo.bigdata" // 组织名称
 
+mappings in Universal ++= contentOf(baseDirectory.value / "../script")
+mappings in Universal ++= contentOf(baseDirectory.value / "src/main/script")
 
 libraryDependencies += "com.amazonaws" % "amazon-kinesis-client" % "1.7.2"
 libraryDependencies +=  "us.pinguo.bigdata" %% "spark-framework" % "0.2-SNAPSHOT"
