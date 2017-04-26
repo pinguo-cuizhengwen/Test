@@ -1,3 +1,6 @@
+import com.typesafe.sbt.packager.MappingsHelper.contentOf
+import sbt.Keys._
+
 name := "Test"
 
 version := "1.0"
@@ -12,6 +15,8 @@ publishTo := Some("Artifactory Realm" at "http://54.222.244.187:8081/artifactory
 
 credentials += Credentials(Path.userHome / ".sbt" / "credentials")
 
+
+enablePlugins(JavaAppPackaging)
 
 organization := "us.pinguo.bigdata" // 组织名称
 

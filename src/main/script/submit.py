@@ -15,7 +15,7 @@ else:
     jar_files = map(lambda x: "lib/%s" % x, os.listdir('lib/'))
     commands = [
         'spark-submit',
-        '--class us.pinguo.bigdata.tagging.Bootstrap',
+        '--class us.pinguo.test.TestSubmit',
         '--master yarn',
         '--deploy-mode client',
         '--driver-memory 1g',
@@ -24,7 +24,7 @@ else:
         '--num-executors 12',
         '--files %s' % (','.join(config_files)),
         '--jars %s' % (','.join(jar_files)),
-        'lib/photo-tagging.photo-tagging-0.1-SNAPSHOT.jar',
+        'lib/us.pinguo.bigdata.test-1.0.jar',
         '%s' % args.config
     ]
     subprocess.call(' '.join(commands), shell=True)
