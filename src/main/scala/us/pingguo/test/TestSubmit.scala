@@ -13,7 +13,6 @@ object TestSubmit extends SparkJob {
     val config = ConfigFactory.load("url.properties")
     val esNodes = config.getString("es.nodes")
     val esRemote = config.getBoolean("es.remote")
-
     val sparkConf = createSparkConf("photo-tagging", config)
     sparkConf.set("spark.task.maxFailures", "12")
     val esConf: Map[String, String] = createESConf(esNodes, esRemote)
